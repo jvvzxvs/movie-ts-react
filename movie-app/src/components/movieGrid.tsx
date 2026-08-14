@@ -1,8 +1,8 @@
 import type { Movie } from "../types/movies";
-import { MovieCard, SkeletonCard } from "./movieCard";
+import { MovieCard, SkeletonCard } from "./MovieCard";
 
 export function MovieGrid({ results }: { results: Movie[] }) {
-  if (results.length == 0) {
+  if (results.length === 0) {
     return (
       <div className="flex justify-center items-center">
         <div className="flex flex-col my-8 mx-2 bg-surface/40 max-w-40 w-1/2 items-center rounded-md p-2">

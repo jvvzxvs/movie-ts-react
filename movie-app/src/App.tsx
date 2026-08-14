@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import type { SearchResponse } from "./types/movies";
 import { searchMovies } from "./api/tmdb";
-import { TopBar } from "./components/topBar";
-import { BottomBar } from "./components/bottomBar";
-import { ErrorBlock } from "./components/errorBlock";
-import { StartBlock } from "./components/startBlock";
-import { MovieGrid } from "./components/movieGrid";
-import { SkeletonGrid } from "./components/movieGrid";
+import { TopBar } from "./components/TopBar";
+import { BottomBar } from "./components/BottomBar";
+import { ErrorBlock } from "./components/ErrorBlock";
+import { StartBlock } from "./components/StartBlock";
+import { MovieGrid, SkeletonGrid } from "./components/MovieGrid";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -52,7 +51,7 @@ function App() {
       <TopBar
         query={query}
         setQuery={setQuery}
-        onSubmit={() => {
+        onSubmit={(query) => {
           setPage(1);
           setSubmittedQuery(query.trim());
         }}
