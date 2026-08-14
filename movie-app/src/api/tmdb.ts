@@ -16,7 +16,7 @@ export async function searchMovies(
   adult: boolean,
   page = 1,
 ): Promise<SearchResponse> {
-  const url = `${BASE_URL}/search/movie?query=${encodeURI(query)}&include_adult=${adult}&language=en-US&page=${page}`;
+  const url = `${BASE_URL}/search/movie?query=${encodeURIComponent(query)}&include_adult=${adult}&language=en-US&page=${page}`;
   const response = await fetch(url, options);
   if (!response.ok) {
     throw new Error(`DB Error: ${response.status}`);

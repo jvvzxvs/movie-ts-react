@@ -34,7 +34,7 @@ function App() {
       } catch (e) {
         if (!cancelled) {
           setError(e instanceof Error ? e.message : "Unknown error");
-          console.log(e);
+          console.error(e);
         }
       } finally {
         if (!cancelled) setLoading(false);
