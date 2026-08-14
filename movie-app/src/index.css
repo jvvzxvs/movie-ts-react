@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Фоны */
+  --color-base: #0d0f14;
+  --color-surface: #151922;
+  --color-elevated: #1d222d;
+
+  /* Границы */
+  --color-line: #262c38;
+  --color-line-strong: #384252;
+
+  /* Текст */
+  --color-ink: #e8eaf0;
+  --color-ink-muted: #99a1b3;
+  --color-ink-faint: #5f6878;
+
+  /* Акцент */
+  --color-accent: #f5c518;
+  --color-accent-hover: #ffd633;
+  --color-accent-ink: #0d0f14;
+
+  /* Статусы */
+  --color-danger: #f26d6d;
+  --color-success: #5fcf80;
+}
