@@ -1,26 +1,32 @@
 import type { Movie } from "../types/movies";
 import { posterUrl } from "../api/tmdb";
 
+export function PlaceholderSvg() {
+  return (
+    <svg
+      className="w-11 h-11 text-ink-faint"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
+      />
+    </svg>
+  );
+}
+
 export function SkeletonCard() {
   return (
     <div className="animate-pulse m-1 aspect-2/3 w-full rounded-md bg-elevated flex items-center justify-center text-ink-faint text-xs">
-      <svg
-        className="w-11 h-11 text-ink-faint"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
-        />
-      </svg>
+      <PlaceholderSvg />
     </div>
   );
 }
@@ -40,23 +46,7 @@ export function MovieCard({ movie }: { movie: Movie }) {
         />
       ) : (
         <div className="aspect-2/3 w-full bg-elevated flex flex-col items-center justify-center text-ink-faint text-xs">
-          <svg
-            className="w-11 h-11 text-ink-faint"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="m3 16 5-7 6 6.5m6.5 2.5L16 13l-4.286 6M14 10h.01M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"
-            />
-          </svg>
+          <PlaceholderSvg />
           no poster
         </div>
       )}

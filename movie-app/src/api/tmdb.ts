@@ -1,4 +1,5 @@
 import type { SearchResponse } from "../types/movies";
+import type { MovieDetail } from "../types/movies";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const IMG_URL = "https://image.tmdb.org/t/p";
@@ -26,4 +27,14 @@ export async function searchMovies(
 
 export function posterUrl(path: string | null, size = "w342"): string | null {
   return path ? `${IMG_URL}/${size}${path}` : null;
+}
+
+export async function searchMovie(id: number): Promise<MovieDetail> {
+  const url = `${BASE_URL}/movie/${id}?append_to_response=videos,credits`;
+  console.log("calling api@", url);
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    throw new Error(`DB Error: ${response.status}`);
+  }
+  return response.json();
 }
