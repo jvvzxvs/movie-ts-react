@@ -21,6 +21,10 @@ export interface Cast {
   profile_path: string | null;
 }
 
+export interface Videos {
+  results: { type: string; site: string; key: string; official: boolean }[];
+}
+
 export interface MovieDetail {
   id: number;
   title: string;
@@ -31,6 +35,6 @@ export interface MovieDetail {
   overview: string;
   vote_average: number;
   vote_count: number;
-  key: string;
+  videos: Videos;
   cast: Cast[];
 }
