@@ -4,7 +4,7 @@ import { MoviePage } from "./pages/MoviePage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<SearchPage />} />
         <Route path="/movies/:movieId" element={<MoviePage />} />
